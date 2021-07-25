@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books by author</title>
+</head>
+<body>
+    <h1>Books by author</h1>
+    
+    <table border="1">
+        <thead>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{book.id}}</td>
+                    <td>{{book.title}}</td>
+                    <td>{{book.author.name}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors List</title>
+</head>
+<body>
+    <h1>Registered authors </h1>  <a href="/author/add"> Add new</a>
+    <table border="1">
+        <thead>
+            <th>Names</th>
+            <th>Nationality</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            {% for author in authors %}
+                <tr>
+                    <td>{{author.name}}</td>
+                    <td>{{author.nationality}}</td>
+                    <td><a href="{% url 'biblioteca_app:books-author' author.id %}">List books</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
